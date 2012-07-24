@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<!-- 
+Refence
+http://www.proprofs.com/flashcards/tableview.php?title=robinson-r22-poh-1-general
+
+NTSB/SIR-96/03 
+-->
+
+<rotor name="r22_rotor">
+
+  <diameter  unit="FT">                  25.167 </diameter>
+  <numblades>                               2 </numblades>
+  <gearratio>                               5 </gearratio> <!-- 47:11 * 1:.8536 -->
+  <nominalrpm>                          510.0 </nominalrpm> <!-- engine 2550rpm  -->
+  <chord unit="FT">                       0.6 </chord>
+  <liftcurveslope>                        5.76</liftcurveslope> <!-- From YASim -->
+  <flappingmoment unit="SLUG*FT2">     1382.0 </flappingmoment> <!-- mass approx. 8.57 slug -->
+  <twist unit="DEG">                     -8.0 </twist>
+
+<!-- Guesses -->
+  <gearloss>0.4</gearloss>
+  <massmoment>                           3.6 </massmoment> <!-- SLUG*FT, estimated from 52lb*302 in  --> 
+  <polarmoment unit="SLUG*FT2">         92.0 </polarmoment>
+
+<!-- From here down isn't correct or verified -->
+  <tiplossfactor>                        0.98 </tiplossfactor>
+  <inflowlag>                            0.09 </inflowlag>
+  <hingeoffset unit="FT">                1.25 </hingeoffset>
+  <groundeffectexp>                     0.081 </groundeffectexp>
+  <groundeffectshift unit="FT">          14.0 </groundeffectshift>
+
+</rotor>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<!--  =================================================================
+
+       This file will attemt to create properties similar to the YASim Model
+       so the animations and sounds just work
+
+      =================================================================  -->
+
+<system name="fgfs layer">
+
+  <channel name="propulsion">
+    <fcs_function name="/engines/engine/n1">
+      <function>
+        <product>
+          <property> propulsion/engine/engine-rpm </property>
+          <value> 0.039 </value>
+        </product>
+      </function>
+    </fcs_function>
+    <fcs_function name="/rotors/main/rpm">
+      <function>
+        <product>
+          <property> propulsion/engine/rotor-rpm </property>
+          <value> 1. </value>
+        </product>
+      </function>
+    </fcs_function>
+  </channel>
+<property value="1.5"> systems/electrical/starter-gain</property>
+<property value="0.0"> /systems/electrical/sources/bus</property>
+  <channel name="starter">
+     <pure_gain name="systems/electrical/starter-norm">
+        <input> /systems/electrical/sources/bus </input>
+        <gain> systems/electrical/starter-gain   </gain>
+        <output> propulsion/engine/starter-norm </output>
+      </pure_gain>
+  </channel>
+</system>

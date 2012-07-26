@@ -104,18 +104,18 @@
  </mass_balance>
 
  <ground_reactions>
-<!-- Gear locations from YASIM model, X locations + 100 inches -->
+<!-- Gear locations from 3d model, X locations + 100 inches -->
   <contact type="STRUCTURE" name="LEFT_FWD">
    <location unit="IN">
      <x>   40.9 </x>
      <y>   36. </y>
-     <z> -100. </z>
+     <z>  -98. </z>
    </location>
    <static_friction>  0.80 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
    <rolling_friction> 0.50 </rolling_friction>
-   <spring_coeff unit="LBS/FT">       600. </spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC">  200. </damping_coeff>
+   <spring_coeff unit="LBS/FT">       500. </spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC">  160. </damping_coeff>
    <max_steer unit="DEG">0</max_steer>
    <brake_group>NONE</brake_group>
    <retractable>0</retractable>
@@ -125,13 +125,13 @@
    <location unit="IN">
      <x>   40.9 </x>
      <y>  -36. </y>
-     <z> -100. </z>
+     <z> -98. </z>
    </location>
    <static_friction>  0.80 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
    <rolling_friction> 0.50 </rolling_friction>
-   <spring_coeff unit="LBS/FT">       600. </spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC">  200. </damping_coeff>
+   <spring_coeff unit="LBS/FT">       500. </spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC">  160. </damping_coeff>
    <max_steer unit="DEG">0</max_steer>
    <brake_group>NONE</brake_group>
    <retractable>0</retractable>
@@ -139,8 +139,8 @@
   <contact type="STRUCTURE" name="LEFT_AFT">
    <location unit="IN">
      <x>  120. </x>
-     <y>   36. </y>
-     <z> -100. </z>
+     <y>   38. </y>
+     <z> -104. </z>
    </location>
    <static_friction>  0.80 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
@@ -155,8 +155,8 @@
   <contact type="STRUCTURE" name="RIGHT_AFT">
    <location unit="IN">
      <x>  120. </x>
-     <y>  -36. </y>
-     <z> -100. </z>
+     <y>  -38. </y>
+     <z> -104. </z>
    </location>
    <static_friction>  0.80 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
@@ -427,7 +427,7 @@
       </lag_filter>
       <pure_gain name="fcs/pedal-gain">
         <input>  fcs/pedal-lag </input>
-        <gain>   -0.1600 </gain> <!-- change sign if mr sense is -1  -->
+        <gain>   0.1600 </gain> <!-- change sign if mr sense is -1  -->
         <output> fcs/x-ped </output>
       </pure_gain>
       <pure_gain name="fcs/pedal-col-mix">

@@ -15,7 +15,7 @@ NTSB/SIR-96/03
   <nominalrpm>                          510.0 </nominalrpm> <!-- engine 2550rpm  -->
   <chord unit="FT">                       0.6 </chord>
   <liftcurveslope>                        5.76</liftcurveslope> <!-- From YASim -->
-  <flappingmoment unit="SLUG*FT2">     1382.0 </flappingmoment> <!-- mass approx. 8.57 slug -->
+  <flappingmoment unit="SLUG*FT2">     138.20 </flappingmoment> <!-- mass approx. 8.57 slug -->
   <twist unit="DEG">                     -8.0 </twist>
 
 <!-- Guesses -->

@@ -23,6 +23,6 @@
   <maxrpm>                   2652.0  </maxrpm> <!-- From Robinson R22 Manual -->
   <sparkfaildrop>               0.1 </sparkfaildrop>
   <starter-torque> 120 </starter-torque>
-  <ram-air-factor> .0 </ram-air-factor> 
+  <ram-air-factor> 0. </ram-air-factor> 
 </piston_engine>
 

@@ -276,6 +276,26 @@ Syd Adams
         </fuel>
     </consumables>
 
+ <payload>
+  <weight>
+   <name type="string">Pilot</name>
+   <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]"/>
+   <min-lb type="double">0.0</min-lb>
+   <max-lb type="double">250.0</max-lb>
+  </weight>
+  <weight>
+   <name type="string">Co-Pilot</name>
+   <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]"/>
+   <min-lb type="double">0.0</min-lb>
+   <max-lb type="double">250.0</max-lb>
+  </weight>
+</payload> 
+<limits>
+ <mass-and-balance>
+  <maximum-takeoff-mass-lbs type="double">1300</maximum-takeoff-mass-lbs>
+ </mass-and-balance>
+</limits>
+ 
     <input>
         <keyboard>
             <key n="123">

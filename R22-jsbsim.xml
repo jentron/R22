@@ -226,7 +226,7 @@
   </engine>
    <engine file="electric_1hp_dummy">
     <location unit="IN">
-      <x> 29.0 </x>
+      <x> 273.0 </x>
       <y>  0.0 </y>
       <z>  0.0 </z>
     </location>
@@ -247,7 +247,7 @@
     <orient unit="DEG">
       <pitch>  0.0 </pitch>
       <roll>   0.0 </roll>
-      <yaw>  -90.0 </yaw>
+      <yaw>   90.0 </yaw>
     </orient>
    </thruster>
   </engine>

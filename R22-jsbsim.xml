@@ -75,15 +75,21 @@
        <y> 10.7 </y><!-- POH -->
        <z>-71.</z><!-- YASim -->
      </location>
+     <form shape="ball">
+      <radius unit="FT"> 2 </radius>
+     </form>  
    </pointmass> 
 
    <pointmass name="Co-Pilot">
-     <weight unit="LBS"> 0 </weight>
+     <weight unit="LBS"> 200 </weight>
      <location name="POINTMASS" unit="IN">
        <x>78.0 </x> <!-- POH -->
        <y>-9.3 </y><!-- POH -->
        <z>-71. </z><!-- YASim -->
      </location>
+     <form shape="ball">
+      <radius unit="FT"> 2 </radius>
+     </form>  
    </pointmass> 
 
    <pointmass name="Doors">
@@ -212,7 +218,7 @@
       <z>  0.0 </z>
     </location>
     <orient unit="DEG">
-      <pitch> 90.0 </pitch>
+      <pitch>90.0 </pitch>
       <roll>  0.0 </roll>
       <yaw>   0.0 </yaw>
     </orient>
@@ -240,8 +246,8 @@
     </location>
     <orient unit="DEG">
       <pitch>  0.0 </pitch>
-      <roll> -90.0 </roll>
-      <yaw>    0.0 </yaw>
+      <roll>   0.0 </roll>
+      <yaw>  -90.0 </yaw>
     </orient>
    </thruster>
   </engine>

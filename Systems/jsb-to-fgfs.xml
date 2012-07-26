@@ -21,11 +21,33 @@
   </channel>
 <property value="1.5"> systems/electrical/starter-gain</property>
 <property value="0.0"> /systems/electrical/sources/bus</property>
+
   <channel name="starter">
      <pure_gain name="systems/electrical/starter-norm">
         <input> /systems/electrical/sources/bus </input>
         <gain> systems/electrical/starter-gain   </gain>
         <output> propulsion/engine/starter-norm </output>
+      </pure_gain>
+
+  </channel>
+
+  <channel name="oil-system">
+     <pure_gain name="systems/engine/oilpressire-norm">
+        <input> propulsion/engine/oil-pressure-psi </input>
+        <gain>  0.01  </gain>
+        <output> /engines/engine/oilp-norm </output>
+      </pure_gain>
+
+     <pure_gain name="systems/engine/oiltemp-norm">
+        <input> propulsion/engine/oil-temperature-degF </input>
+        <gain>   0.0041 </gain>
+        <output> /engines/engine/oilt-norm </output>
+      </pure_gain>
+
+     <pure_gain name="systems/engine/cylhd-norm">
+        <input> propulsion/engine/cht-degF </input>
+        <gain>   0.002 </gain>
+        <output> /engines/engine/cylhd-norm </output>
       </pure_gain>
   </channel>
 

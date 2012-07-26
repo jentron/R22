@@ -32,18 +32,18 @@
 -->
 
  <metrics>
-   <wingarea  unit="M2">  22.438 </wingarea>
-   <wingspan  unit="M" >  12.000 </wingspan>
+   <wingarea  unit="FT2">  22.438 </wingarea>
+   <wingspan  unit="FT" >  12.000 </wingspan>
    <wing_incidence>        -0.01 </wing_incidence>
-   <chord     unit="M" >   2.500 </chord>
-   <htailarea unit="M2">   3.971 </htailarea>
-   <htailarm  unit="M" >   5.100 </htailarm>
-   <vtailarea unit="M2">   1.619 </vtailarea>
-   <vtailarm  unit="M" >   5.460 </vtailarm>
-   <location name="AERORP" unit="M">
-     <x> -0.21 </x>
+   <chord     unit="FT" >   2.500 </chord>
+   <htailarea unit="FT2">   3.971 </htailarea>
+   <htailarm  unit="FT" >   5.100 </htailarm>
+   <vtailarea unit="FT2">   1.619 </vtailarea>
+   <vtailarm  unit="FT" >   5.460 </vtailarm>
+   <location name="AERORP" unit="IN">
+     <x>  0.00 </x>
      <y>  0.00 </y>
-     <z> -0.12 </z>
+     <z>  0.00 </z>
    </location>
    <location name="EYEPOINT" unit="M">
      <x>   0.44 </x>

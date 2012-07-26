@@ -36,4 +36,14 @@
         <output> propulsion/engine/starter-norm </output>
       </pure_gain>
   </channel>
+
+<property value="0.0"> /rotors/main/blade[0]/position-deg</property>
+<property value="180.0"> /rotors/main/blade[1]/position-deg</property>
+  <channel name="rotor">
+      <summer name="systems/rotor/blade1-position-deg">
+        <input> /rotors/main/blade[0]/position-deg </input>
+        <bias>  180 </bias>
+        <output> /rotors/main/blade[1]/position-deg </output>
+      </summer>
+    </channel>
 </system>

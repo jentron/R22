@@ -175,6 +175,18 @@
    <damping_coeff unit="LBS/FT/SEC">  118. </damping_coeff>
  </contact>
 
+ <contact type="STRUCTURE" name="ROTOR">
+   <location unit="IN">
+     <x>   0.0 </x>
+     <y>   0.0 </y>
+     <z>   0.0  </z>
+   </location>
+   <static_friction>  0.80 </static_friction>
+   <dynamic_friction> 0.50 </dynamic_friction>
+   <spring_coeff unit="LBS/FT">       589. </spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC">  118. </damping_coeff>
+ </contact>
+ 
  </ground_reactions>
 
  <propulsion>
@@ -264,7 +276,7 @@
     <property value="510.0"> fcs/nominal-rpm </property>
   </system>
 
-  <system file="rpm_governor"/>
+  <!--system file="rpm_governor"/-->
 
   <system name="control_decl">
     <property value="0.0"> fcs/x-col </property>
@@ -288,7 +300,7 @@
     <channel name="clutch">
      <pure_gain name="systems/transmission/clutch-ctrl">
         <input>  propulsion/engine/engine-rpm </input>
-        <gain>   0.00034 </gain>
+        <gain>   0.0005 </gain>
         <clipto>
           <min> 0.0 </min>
           <max> 1.0 </max>

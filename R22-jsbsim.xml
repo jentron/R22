@@ -41,9 +41,9 @@
    <vtailarea unit="FT2">   1.619 </vtailarea>
    <vtailarm  unit="FT" >   5.460 </vtailarm>
    <location name="AERORP" unit="IN">
-     <x>  0.00 </x>
+     <x>100.00 </x>
      <y>  0.00 </y>
-     <z>  0.00 </z>
+     <z>-64.00 </z>
    </location>
    <location name="EYEPOINT" unit="M">
      <x>   0.44 </x>
@@ -212,7 +212,7 @@
       <z>  0.0 </z>
     </location>
     <orient unit="DEG">
-      <pitch> 0.0 </pitch>
+      <pitch> 90.0 </pitch>
       <roll>  0.0 </roll>
       <yaw>   0.0 </yaw>
     </orient>
@@ -421,7 +421,7 @@
       </lag_filter>
       <pure_gain name="fcs/pedal-gain">
         <input>  fcs/pedal-lag </input>
-        <gain>   0.1600 </gain> <!-- change sign if mr sense is -1  -->
+        <gain>   -0.1600 </gain> <!-- change sign if mr sense is -1  -->
         <output> fcs/x-ped </output>
       </pure_gain>
       <pure_gain name="fcs/pedal-col-mix">

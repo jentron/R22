@@ -1,6 +1,7 @@
 aircraft.livery.init("Aircraft/R22/Models/Liveries", "sim/model/livery/name", "sim/model/livery/index");
 var RPM_arm=props.globals.getNode("/instrumentation/alerts/rpm",1);
 var engine_on=props.globals.initNode("engines/engine/on",0,"BOOL");
+var electric_key=props.globals.getNode("/controls/electric/key",1);
 var last_time = 0;
 var start_timer=0;
 
@@ -17,7 +18,6 @@ setlistener("/sim/signals/fdm-initialized", func {
 
 setlistener("/sim/signals/reinit", func {
     RPM_arm.setBoolValue(0);
-    setprop("/controls/engines/engine/throttle",1);
     setprop("sim/model/autostart",0);
     Shutdown();
 });
@@ -52,10 +52,10 @@ setlistener("/sim/model/autostart", func(idle){
     }
 },0,0);
 
-setlistener("controls/engines/engine/magnetos", func(mg){
-    if(mg.getValue() == 0)engine_on.setValue(0);
+setlistener("controls/electric/key", func{
+    var mg=electric_key.getValue(0);
+    setprop("controls/engines/engine/magnetos", mg);
 },1,0);
-
 
 var Startup = func{
 setprop("controls/electric/engine[0]/generator",1);
@@ -89,7 +89,6 @@ setprop("/instrumentation/clock/flight-meter-hour",fhour);
 }
 
 var kill_engine=func{
-        setprop("/controls/engines/engine/magnetos",0);
         setprop("/engines/engine/clutch-engaged",0);
         engine_on.setValue(0);
         start_timer=0;

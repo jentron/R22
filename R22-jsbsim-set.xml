@@ -36,9 +36,11 @@ Syd Adams
 
         <systems>
             <path>Aircraft/R22/Systems/systems.xml</path>
+<!--
             <autopilot>
                 <path>Aircraft/R22/Systems/auto-assist.xml</path>
             </autopilot>
+-->
         </systems>
 
         <instrumentation>

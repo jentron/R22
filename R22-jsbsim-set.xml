@@ -176,6 +176,14 @@ Syd Adams
                 <desc>Engage starter</desc>
             </key>
             <key>
+                <name>(</name>
+                <desc>toggle alternator switch</desc>
+            </key>
+            <key>
+                <name>)</name>
+                <desc>toggle battery switch</desc>
+            </key>
+            <key>
                 <name>N</name>
                 <desc>toggle rotor brake</desc>
             </key>
@@ -231,7 +239,7 @@ Syd Adams
     <controls>
         <engines>
             <engine>
-                <throttle>1.0</throttle>
+                <throttle>0.0</throttle>
                 <clutch type="bool">0</clutch>
                 <clutchguard type="bool">0</clutchguard>
             </engine>
@@ -328,6 +336,24 @@ Syd Adams
                 <binding>
                     <command>property-toggle</command>
                     <property>controls/rotor/brake</property>
+                </binding>
+            </key>
+
+            <key n="40">
+                <name>(</name>
+                <desc>Toggle Alternator Switch</desc>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>controls/electric/engine/generator</property>
+                </binding>
+            </key>
+
+             <key n="41">
+                <name>)</name>
+                <desc>Toggle Battery Switch</desc>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>controls/electric/battery-switch</property>
                 </binding>
             </key>
         </keyboard>

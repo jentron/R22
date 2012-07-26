@@ -25,7 +25,7 @@
     </model>
 
     <model>
-        <path>Aircraft/R22/Models/Instruments/plug.xml</path>
+        <path>Aircraft/R22/Models/Instruments/map.xml</path>
         <offsets>
             <x-m>-1.331</x-m>
             <y-m>0.078</y-m>
@@ -748,6 +748,8 @@
         <object-name>VOR.to</object-name>
         <object-name>VOR.fail</object-name>
         <object-name>PIA.card</object-name>
+        <object-name>MAP.face</object-name>
+        <object-name>MAP.needle</object-name>
          <emission>
             <red>1</red>
             <green>0.3</green>

@@ -327,7 +327,6 @@
   <system file="jsb-to-fgfs"/>
 
   <system name="transmission">
-    <property value=".1"> fcs/clutch-tension-cmd </property>
 
     <channel name="clutch">
       <fcs_function name="systems/transmission/clutch-tension-value">

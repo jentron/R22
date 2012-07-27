@@ -53,8 +53,16 @@
 
 <property value="0.0"> /rotors/main/blade[0]/position-deg</property>
 <property value="180.0"> /rotors/main/blade[1]/position-deg</property>
+<property value="1.0"> /controls/engines/engine/clutch </property>
 
   <channel name="rotor">
+  
+    <pure_gain name="systems/rotor/clutch-cmd">
+      <input>/controls/engines/engine/clutch</input>
+      <gain> 1.0 </gain>
+      <output> fcs/clutch-tension-cmd </output>
+    </pure_gain>
+
     <fcs_function name="systems/rotor/rate-deg_sec">
       <function>
         <product>

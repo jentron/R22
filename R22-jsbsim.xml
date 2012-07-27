@@ -327,10 +327,24 @@
   <system file="jsb-to-fgfs"/>
 
   <system name="transmission">
+    <property value=".1"> fcs/clutch-tension-cmd </property>
+
     <channel name="clutch">
+      <fcs_function name="systems/transmission/clutch-tension-value">
+        <function>
+          <sum>
+            <product>
+              <property> fcs/clutch-tension-cmd  </property>
+              <value>   0.0005 </value> <!-- on tension delta --> 
+             </product>
+            <value> 0.000015 </value> <!-- off tension -->
+          </sum>
+        </function>
+      </fcs_function>
+     
      <pure_gain name="systems/transmission/clutch-ctrl">
         <input>  propulsion/engine/engine-rpm </input>
-        <gain>   0.0005 </gain>
+        <gain>   systems/transmission/clutch-tension-value </gain>
         <clipto>
           <min> 0.0 </min>
           <max> 1.0 </max>

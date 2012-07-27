@@ -193,6 +193,30 @@
    <damping_coeff unit="LBS/FT/SEC">  118. </damping_coeff>
  </contact>
  
+ <contact type="STRUCTURE" name="CABIN LEFT">
+   <location unit="IN">
+     <x>   0.0 </x>
+     <y> -44.0 </y>
+     <z>  30.0  </z>
+   </location>
+   <static_friction>  0.80 </static_friction>
+   <dynamic_friction> 0.50 </dynamic_friction>
+   <spring_coeff unit="LBS/FT">       589. </spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC">  118. </damping_coeff>
+ </contact>
+
+ <contact type="STRUCTURE" name="CABIN RIGHT">
+   <location unit="IN">
+     <x>   0.0 </x>
+     <y> -44.0 </y>
+     <z> -30.0  </z>
+   </location>
+   <static_friction>  0.80 </static_friction>
+   <dynamic_friction> 0.50 </dynamic_friction>
+   <spring_coeff unit="LBS/FT">       589. </spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC">  118. </damping_coeff>
+ </contact>
+
  </ground_reactions>
 
  <propulsion>
@@ -347,7 +371,28 @@
       </summer>
     </channel>
 
-    <channel name="longitudinal">
+    <channel name="correlator">
+      <pure_gain name="fcs/correlator-col-gain">
+        <input>  fcs/collective-lag </input>
+        <gain>   0.50 </gain><!-- The two correlator gains should sum to 1.00 -->
+      </pure_gain>
+      <pure_gain name="fcs/correlator-throttle-gain">
+        <input>  fcs/throttle-cmd-norm </input><!-- governor will kick in on this property at 60% rpm -->
+        <gain>   0.50 </gain>
+      </pure_gain>
+      <summer name="fcs/collective-ctrl-rad">
+        <input> fcs/correlator-col-gain </input>
+        <input> fcs/correlator-throttle-gain </input>
+        <bias>  0.0 </bias>
+        <clipto>
+          <min> 0.0 </min>
+          <max> 1.0 </max>
+        </clipto>
+        <output> fcs/throttle-pos-norm </output>
+      </summer>
+    </channel>
+
+  <channel name="longitudinal">
       <summer name="fcs/longitudinal-cmd-trim-sum">
         <input> fcs/elevator-cmd-norm </input>
         <input> fcs/pitch-trim-cmd-norm </input>

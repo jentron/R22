@@ -15,19 +15,34 @@ NTSB/SIR-96/03
   <nominalrpm>                          510.0 </nominalrpm> <!-- engine 2550rpm  -->
   <chord unit="FT">                       0.6 </chord>
   <liftcurveslope>                        5.76</liftcurveslope> <!-- From YASim -->
-  <flappingmoment unit="SLUG*FT2">     40. </flappingmoment> <!-- 26 lb * 12 ft ^2 / 3 -->
   <twist unit="DEG">                     -8.0 </twist>
 
 <!-- Guesses -->
   <gearloss>0.4</gearloss>
-  <massmoment>                           3.6 </massmoment>  
-  <polarmoment unit="SLUG*FT2">         85.0 </polarmoment><!-- SLUG*FT, estimated from 52lb*(302 in)^2 / 12  -->
+
+<!-- Moments -->
+ <!-- Defaults
+       Blade Flapping Moment = 26.357575
+       Blade Mass Moment = 2.827729
+       Polar Moment = 57.986665
+  -->
+ <!-- Calculated -->
+ <!--  Flapping Moment  26 lb * (12 ft)^2 / 3 = 38.8 slug ft^2
+       Mass Moment  26 lb * 42in             =  2.8 slug ft
+       Polar moment 52lb*(302 in)^2 / 12     = 86.0 slug ft^2
+  -->
+  <flappingmoment unit="SLUG*FT2">      38.8 </flappingmoment>
+  <massmoment>                           2.82 </massmoment>
+  <polarmoment unit="SLUG*FT2">         86.0 </polarmoment>
+
 
 <!-- From here down isn't correct or verified -->
   <tiplossfactor>                        0.98 </tiplossfactor>
   <inflowlag>                            0.09 </inflowlag>
-  <hingeoffset unit="FT">                1.25 </hingeoffset>
-  <groundeffectexp>                     0.081 </groundeffectexp>
-  <groundeffectshift unit="FT">          10.0 </groundeffectshift>
+  <hingeoffset unit="FT">                0.50 </hingeoffset>
+  <groundeffectexp>                      0.081 </groundeffectexp>
+  <groundeffectshift unit="FT">          0.0 </groundeffectshift>
+
+
 
 </rotor>

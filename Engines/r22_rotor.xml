@@ -15,19 +15,19 @@ NTSB/SIR-96/03
   <nominalrpm>                          510.0 </nominalrpm> <!-- engine 2550rpm  -->
   <chord unit="FT">                       0.6 </chord>
   <liftcurveslope>                        5.76</liftcurveslope> <!-- From YASim -->
-  <flappingmoment unit="SLUG*FT2">     13.820 </flappingmoment> <!-- mass approx. 8.57 slug -->
+  <flappingmoment unit="SLUG*FT2">     40. </flappingmoment> <!-- 26 lb * 12 ft ^2 / 3 -->
   <twist unit="DEG">                     -8.0 </twist>
 
 <!-- Guesses -->
   <gearloss>0.4</gearloss>
-  <massmoment>                           3.6 </massmoment> <!-- SLUG*FT, estimated from 52lb*302 in  --> 
-  <polarmoment unit="SLUG*FT2">         92.0 </polarmoment>
+  <massmoment>                           3.6 </massmoment>  
+  <polarmoment unit="SLUG*FT2">         85.0 </polarmoment><!-- SLUG*FT, estimated from 52lb*(302 in)^2 / 12  -->
 
 <!-- From here down isn't correct or verified -->
   <tiplossfactor>                        0.98 </tiplossfactor>
   <inflowlag>                            0.09 </inflowlag>
   <hingeoffset unit="FT">                1.25 </hingeoffset>
   <groundeffectexp>                     0.081 </groundeffectexp>
-  <groundeffectshift unit="FT">          14.0 </groundeffectshift>
+  <groundeffectshift unit="FT">          10.0 </groundeffectshift>
 
 </rotor>

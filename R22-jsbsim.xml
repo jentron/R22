@@ -334,16 +334,22 @@
           <sum>
             <product>
               <property> fcs/clutch-tension-cmd  </property>
-              <value>   0.0005 </value> <!-- on tension delta --> 
+              <value>   0.0008 </value> <!-- on tension delta --> 
              </product>
             <value> 0.000015 </value> <!-- off tension -->
           </sum>
         </function>
       </fcs_function>
-     
+
+      <actuator name="systems/transmission/clutch-tension-actuator">
+        <input> systems/transmission/clutch-tension-value </input>
+        <lag> number </lag>
+        <rate_limit> 0.0001 </rate_limit>
+      </actuator>
+
      <pure_gain name="systems/transmission/clutch-ctrl">
         <input>  propulsion/engine/engine-rpm </input>
-        <gain>   systems/transmission/clutch-tension-value </gain>
+        <gain>   systems/transmission/clutch-tension-actuator </gain>
         <clipto>
           <min> 0.0 </min>
           <max> 1.0 </max>
@@ -393,7 +399,7 @@
         <input>  fcs/throttle-cmd-norm </input><!-- governor will kick in on this property at 60% rpm -->
         <gain>   0.50 </gain>
       </pure_gain>
-      <summer name="fcs/collective-ctrl-rad">
+      <summer name="fcs/correlator-throttle-sum">
         <input> fcs/correlator-col-gain </input>
         <input> fcs/correlator-throttle-gain </input>
         <bias>  0.0 </bias>

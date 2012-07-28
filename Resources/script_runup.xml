@@ -28,21 +28,21 @@
       <condition>simulation/sim-time-sec  ge  30</condition>
       <set name="fcs/throttle-cmd-norm[0]" action="FG_EXP" value="0.25" tc="1.0"/>
       <set name="fcs/advance-cmd-norm[0]"  action="FG_EXP" value="0.25" tc="1.0"/>
-      <set name="ap/afcs/roll-channel-active-norm" value="1.0"/> 
-      <set name="ap/afcs/yaw-channel-active-norm" value="1.0"/> 
+      <set name="ap/afcs/roll-channel-active-norm" value="5.0"/> 
+      <set name="ap/afcs/yaw-channel-active-norm" value="5.0"/> 
       <set name="ap/afcs/pitch-channel-active-norm" value="5.0"/>
       <notify/>
     </event>
     <event name="Throttle Full">
       <condition>simulation/sim-time-sec  ge  50</condition>
-      <set name="fcs/throttle-cmd-norm[0]" action="FG_EXP" value=".85" tc="5.0"/>
+      <set name="fcs/throttle-cmd-norm[0]" action="FG_EXP" value=".85" tc="1.0"/>
       <set name="fcs/advance-cmd-norm[0]"  action="FG_EXP" value=".85" tc="5.0"/>
       <notify/>
     </event>
     <event name="Throttle down">
       <condition>simulation/sim-time-sec  ge  80</condition>
-      <set name="fcs/throttle-cmd-norm[0]" action="FG_EXP" value="0.0" tc="1.0"/>
-      <set name="fcs/advance-cmd-norm[0]"  action="FG_EXP" value="0.0" tc="1.0"/>
+      <set name="fcs/throttle-cmd-norm[0]" action="FG_EXP" value="0.85" tc="1.0"/>
+      <set name="fcs/advance-cmd-norm[0]"  action="FG_EXP" value="0.0" tc="10.0"/>
       <notify/>
     </event>
   </run>

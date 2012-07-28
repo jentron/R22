@@ -180,7 +180,7 @@ Syd Adams
                 <desc>toggle battery switch</desc>
             </key>
             <key>
-                <name>N</name>
+                <name>B</name>
                 <desc>toggle rotor brake</desc>
             </key>
             <key>
@@ -326,8 +326,8 @@ Syd Adams
                     <wrap>0</wrap>
                 </binding>
             </key>
-            <key n="78">
-                <name>N</name>
+            <key n="66">
+                <name>B</name>
                 <desc>Toggle rotor brake</desc>
                 <binding>
                     <command>property-toggle</command>

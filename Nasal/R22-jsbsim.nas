@@ -10,6 +10,7 @@ FHmeter.stop();
 
 setlistener("/sim/signals/fdm-initialized", func {
     setprop("/instrumentation/clock/flight-meter-hour",0);
+    setprop("controls/engines/engine/propeller-pitch",0);
     RPM_arm.setBoolValue(0);
     print("Systems ... Check");
     settimer(update_systems,2);
@@ -19,6 +20,7 @@ setlistener("/sim/signals/fdm-initialized", func {
 setlistener("/sim/signals/reinit", func {
     RPM_arm.setBoolValue(0);
     setprop("sim/model/autostart",0);
+    setprop("controls/engines/engine/propeller-pitch",0);
     Shutdown();
 });
 
@@ -65,6 +67,7 @@ setprop("controls/lighting/beacon",1);
 setprop("controls/lighting/strobe",1);
 setprop("controls/electric/key",3);
 setprop("controls/engines/engine/magnetos",3);
+setprop("controls/engines/engine/propeller-pitch",0);
 engine_on.setValue(1);
 setprop("controls/engines/engine[0]/clutch",1);
 }
@@ -78,6 +81,7 @@ setprop("controls/lighting/beacon",0);
 setprop("controls/electric/key",0);
 setprop("controls/engines/engine/magnetos",0);
 setprop("controls/engines/engine[0]/clutch",0);
+setprop("controls/engines/engine/propeller-pitch",0);
 engine_on.setValue(0);
 }
 

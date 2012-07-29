@@ -108,7 +108,7 @@
   <contact type="STRUCTURE" name="LEFT_FWD">
    <location unit="IN">
      <x>   40.9 </x>
-     <y>   36. </y>
+     <y>  -36. </y>
      <z>  -98. </z>
    </location>
    <static_friction>  0.80 </static_friction>
@@ -119,12 +119,28 @@
    <max_steer unit="DEG">0</max_steer>
    <brake_group>NONE</brake_group>
    <retractable>0</retractable>
- </contact>
+  </contact>
+
+  <contact type="STRUCTURE" name="LEFT_AFT">
+   <location unit="IN">
+     <x>  120. </x>
+     <y>  -38. </y>
+     <z> -104. </z>
+   </location>
+   <static_friction>  0.80 </static_friction>
+   <dynamic_friction> 0.50 </dynamic_friction>
+   <rolling_friction> 0.50 </rolling_friction>
+   <spring_coeff unit="LBS/FT">       600. </spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC">  200. </damping_coeff>
+   <max_steer unit="DEG">0</max_steer>
+   <brake_group>NONE</brake_group>
+   <retractable>0</retractable>
+  </contact>
 
   <contact type="STRUCTURE" name="RIGHT_FWD">
    <location unit="IN">
-     <x>   40.9 </x>
-     <y>  -36. </y>
+     <x>  40.9 </x>
+     <y>  36. </y>
      <z> -98. </z>
    </location>
    <static_friction>  0.80 </static_friction>
@@ -136,26 +152,11 @@
    <brake_group>NONE</brake_group>
    <retractable>0</retractable>
  </contact>
-  <contact type="STRUCTURE" name="LEFT_AFT">
-   <location unit="IN">
-     <x>  120. </x>
-     <y>   38. </y>
-     <z> -104. </z>
-   </location>
-   <static_friction>  0.80 </static_friction>
-   <dynamic_friction> 0.50 </dynamic_friction>
-   <rolling_friction> 0.50 </rolling_friction>
-   <spring_coeff unit="LBS/FT">       600. </spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC">  200. </damping_coeff>
-   <max_steer unit="DEG">0</max_steer>
-   <brake_group>NONE</brake_group>
-   <retractable>0</retractable>
- </contact>
 
   <contact type="STRUCTURE" name="RIGHT_AFT">
    <location unit="IN">
      <x>  120. </x>
-     <y>  -38. </y>
+     <y>   38. </y>
      <z> -104. </z>
    </location>
    <static_friction>  0.80 </static_friction>
@@ -195,9 +196,9 @@
  
  <contact type="STRUCTURE" name="CABIN LEFT">
    <location unit="IN">
-     <x>   0.0 </x>
+     <x> 100.0 </x>
      <y> -44.0 </y>
-     <z>  30.0  </z>
+     <z> -30.0  </z>
    </location>
    <static_friction>  0.80 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
@@ -207,8 +208,8 @@
 
  <contact type="STRUCTURE" name="CABIN RIGHT">
    <location unit="IN">
-     <x>   0.0 </x>
-     <y> -44.0 </y>
+     <x> 100.0 </x>
+     <y>  44.0 </y>
      <z> -30.0  </z>
    </location>
    <static_friction>  0.80 </static_friction>
@@ -223,7 +224,7 @@
 <!-- Thruster locations from YASim  X locations + 100 inches -->
    <engine file="eng_io320-b2c">
     <location unit="IN">
-       <x> 39. </x>
+       <x>139. </x>
        <y>  0. </y>
        <z>-71.</z>
     </location>
@@ -282,8 +283,7 @@
        <y>   -11.0 </y> <!-- POH -->
        <z>   -71.3 </z> <!-- YASim -->
      </location>
-     <!-- density of fuel (92 octane)= 0.735 -->
-     <density unit="LBS/GAL"> 6.134 </density> 
+     <density unit="LBS/GAL"> 6.02 </density> 
      <capacity unit="LBS"> 115.0</capacity> <!-- POH -->
      <contents unit="LBS"> 110.0 </contents>
      <priority> 2 </priority> 
@@ -293,9 +293,9 @@
      <location unit="IN">
        <x>  103.8 </x> <!-- POH -->
        <y>   11.2 </y> <!-- POH -->
-       <z>  -12.6 </z> <!-- YASim -->
+       <z>  -71.3 </z> <!-- YASim -->
      </location>
-     <density unit="LBS/GAL"> 6.134 </density> 
+     <density unit="LBS/GAL"> 6.02 </density> 
      <capacity unit="LBS">   63.0</capacity> <!-- POH -->
      <contents unit="LBS">   60.0 </contents>
      <priority> 1 </priority> 

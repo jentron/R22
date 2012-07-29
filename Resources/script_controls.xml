@@ -4,7 +4,7 @@
     xsi:noNamespaceSchemaLocation="http://jsbsim.sf.net/JSBSimScript.xsd"
     name="Initial Controls Test">
   <use aircraft="R22-jsbsim" initialize="Resources/reset00"/>
-  <run start="0.0" end="45" dt="0.00833333">
+  <run start="0.0" end="50" dt="0.00833333">
 
     <event name="Center Everything">
       <condition>simulation/sim-time-sec  ge  .1</condition>
@@ -137,6 +137,22 @@
       <set name="fcs/elevator-cmd-norm[0]" value="0.0"/>
       <set name="fcs/aileron-cmd-norm[0]"  value="0.0"/>
       <set name="fcs/rudder-cmd-norm[0]"   value="-1.0"/>
+      <notify>
+        <property> fcs/throttle-pos-norm </property>
+        <property> propulsion/engine/collective-ctrl-rad </property>
+        <property> propulsion/engine/lateral-ctrl-rad </property>
+        <property> propulsion/engine/longitudinal-ctrl-rad </property>
+        <property> propulsion/engine[1]/antitorque-ctrl-rad </property>
+      </notify>
+    </event>
+
+    <event name="Center Everything">
+      <condition>simulation/sim-time-sec  ge  45</condition>
+      <set name="fcs/throttle-cmd-norm[0]" value="0.0"/>
+      <set name="fcs/advance-cmd-norm[0]"  value="0.0"/>
+      <set name="fcs/elevator-cmd-norm[0]" value="0.0"/>
+      <set name="fcs/aileron-cmd-norm[0]"  value="0.0"/>
+      <set name="fcs/rudder-cmd-norm[0]"  value="0.0"/>
       <notify>
         <property> fcs/throttle-pos-norm </property>
         <property> propulsion/engine/collective-ctrl-rad </property>

@@ -242,7 +242,7 @@
       <z>  0.0 </z>
     </location>
     <orient unit="DEG">
-      <pitch>90.0 </pitch>
+      <pitch>88.0 </pitch>
       <roll>  0.0 </roll>
       <yaw>   0.0 </yaw>
     </orient>
@@ -397,7 +397,7 @@
           <sum>
             <product>
               <property>  fcs/collective-lag </property>
-              <value> 0.8 </value>
+              <value> 0.85 </value>
             </product>
             <value>  1.0 </value>
           </sum>
@@ -406,7 +406,7 @@
 
       <pure_gain name="systems/correlator/throttle-gain">
         <input>  fcs/throttle-cmd-norm </input><!-- governor will eventually adjust this property -->
-        <gain>   0.5556 </gain>
+        <gain>   0.54054 </gain>
       </pure_gain>
 
       <fcs_function name="systems/correlator/throttle-pos-norm">
@@ -509,7 +509,7 @@
       </pure_gain>
       <pure_gain name="fcs/pedal-col-mix">
         <input>  fcs/x-col </input>
-        <gain>   0.63 </gain>
+        <gain>   0.0 </gain>
       </pure_gain>
       <summer name="fcs/pedal-ctrl-rad">
         <input> fcs/x-ped </input>

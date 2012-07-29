@@ -375,13 +375,14 @@
       </lag_filter>
       <pure_gain name="fcs/collective-gain">
         <input>  fcs/collective-lag </input>
-        <gain>   0.20 </gain>
+        <gain>   0.20 </gain><!-- 11.5 degrees travel from tcds -->
         <output> fcs/x-col </output>
       </pure_gain>
       <summer name="fcs/collective-ctrl-rad">
         <input> fcs/x-col </input>
         <input> ap/collective-cmd </input>
-        <bias>  0.1 </bias>
+        <bias>  0.1 </bias> <!-- Collective low pitch to obtain proper autorotation RPM. -->
+
         <clipto>
           <min> 0.0 </min>
           <max> 0.7 </max>
@@ -396,7 +397,7 @@
         <gain>   0.50 </gain><!-- The two correlator gains should sum to 1.00 -->
       </pure_gain>
       <pure_gain name="fcs/correlator-throttle-gain">
-        <input>  fcs/throttle-cmd-norm </input><!-- governor will kick in on this property at 60% rpm -->
+        <input>  fcs/throttle-cmd-norm </input><!-- governor will eventually adjust this property -->
         <gain>   0.50 </gain>
       </pure_gain>
       <summer name="fcs/correlator-throttle-sum">
@@ -426,13 +427,13 @@
       </lag_filter>
       <pure_gain name="fcs/longitudinal-gain">
         <input>  fcs/longitudinal-lag </input>
-        <gain>   0.1500 </gain>
+        <gain>   0.1750 </gain><!-- +/- 10 degrees -->
         <output> fcs/x-lon </output>
       </pure_gain>
       <summer name="fcs/longitudinal-ctrl-rad">
         <input> fcs/x-lon </input>
         <input> ap/elevator-cmd </input>
-        <bias>  0.0000 </bias>
+        <bias>  0.0175 </bias> <!-- offset forward 1 degree -->
         <clipto>
           <min> -0.7 </min>
           <max>  0.7 </max>
@@ -456,7 +457,7 @@
       </lag_filter>
       <pure_gain name="fcs/lateral-gain">
         <input>  fcs/lateral-lag </input>
-        <gain>   0.0490 </gain>
+        <gain>   0.135 </gain> <!-- +/- 7.75 degrees -->
         <output> fcs/x-lat </output>
       </pure_gain>
       <pure_gain name="fcs/lateral-col-mix">
@@ -467,7 +468,7 @@
         <input> fcs/x-lat </input>
         <input> fcs/lateral-col-mix </input>
         <input> ap/aileron-cmd </input>
-        <bias>  -0.0037 </bias>
+        <bias>   0.061 </bias>
         <clipto>
           <min> -0.7 </min>
           <max>  0.7 </max>

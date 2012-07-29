@@ -515,7 +515,7 @@
         <input> fcs/x-ped </input>
         <input> fcs/pedal-col-mix </input>
         <input> ap/rudder-cmd </input>
-        <bias>  0.007 </bias>
+        <bias>  -0.007 </bias>
         <clipto>
           <min> -0.7 </min>
           <max>  0.7 </max>

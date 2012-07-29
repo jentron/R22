@@ -392,24 +392,36 @@
     </channel>
 
     <channel name="correlator">
-      <pure_gain name="fcs/correlator-col-gain">
-        <input>  fcs/collective-lag </input>
-        <gain>   0.50 </gain><!-- The two correlator gains should sum to 1.00 -->
-      </pure_gain>
-      <pure_gain name="fcs/correlator-throttle-gain">
+      <fcs_function name="systems/correlator/collective-gain"><!-- The two correlator gains should multiply to 1.00 at full throttle -->
+        <function>
+          <sum>
+            <product>
+              <property>  fcs/collective-lag </property>
+              <value> 0.8 </value>
+            </product>
+            <value>  1.0 </value>
+          </sum>
+        </function>
+      </fcs_function>
+
+      <pure_gain name="systems/correlator/throttle-gain">
         <input>  fcs/throttle-cmd-norm </input><!-- governor will eventually adjust this property -->
-        <gain>   0.50 </gain>
+        <gain>   0.5556 </gain>
       </pure_gain>
-      <summer name="fcs/correlator-throttle-sum">
-        <input> fcs/correlator-col-gain </input>
-        <input> fcs/correlator-throttle-gain </input>
-        <bias>  0.0 </bias>
+
+      <fcs_function name="systems/correlator/throttle-pos-norm">
+        <function>
+          <product>
+            <property> systems/correlator/collective-gain </property>
+            <property> systems/correlator/throttle-gain </property>
+          </product>
+        </function>
         <clipto>
           <min> 0.0 </min>
           <max> 1.0 </max>
         </clipto>
         <output> fcs/throttle-pos-norm </output>
-      </summer>
+      </fcs_function>
     </channel>
 
   <channel name="longitudinal">

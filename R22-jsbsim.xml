@@ -272,7 +272,7 @@
     <orient unit="DEG">
       <pitch>  0.0 </pitch>
       <roll>   0.0 </roll>
-      <yaw>   90.0 </yaw>
+      <yaw>  270.0 </yaw>
     </orient>
    </thruster>
   </engine>
@@ -504,7 +504,7 @@
       </lag_filter>
       <pure_gain name="fcs/pedal-gain">
         <input>  fcs/pedal-lag </input>
-        <gain>   0.1600 </gain> <!-- change sign if mr sense is -1  -->
+        <gain>   -0.1600 </gain> <!-- change sign if mr sense is -1  -->
         <output> fcs/x-ped </output>
       </pure_gain>
       <pure_gain name="fcs/pedal-col-mix">

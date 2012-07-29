@@ -58,9 +58,9 @@
  </metrics>
 
  <mass_balance> <!-- Inertial tensor from YASIM model -->
-   <ixx unit="SLUG*FT2">       15 </ixx>
-   <iyy unit="SLUG*FT2">      116 </iyy>
-   <izz unit="SLUG*FT2">      103 </izz>
+   <ixx unit="SLUG*FT2">       150 </ixx>
+   <iyy unit="SLUG*FT2">      1160 </iyy>
+   <izz unit="SLUG*FT2">      1030 </izz>
    <emptywt unit="LBS" >      839.6 </emptywt> <!-- POH - 10.4 lbs for doors -->
    <location name="CG" unit="IN">
      <x>   106.0</x> <!-- POH -->
@@ -515,7 +515,7 @@
         <input> fcs/x-ped </input>
         <input> fcs/pedal-col-mix </input>
         <input> ap/rudder-cmd </input>
-        <bias>  -0.007 </bias>
+        <bias>  0.007 </bias>
         <clipto>
           <min> -0.7 </min>
           <max>  0.7 </max>

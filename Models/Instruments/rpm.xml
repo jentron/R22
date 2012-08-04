@@ -3,14 +3,18 @@
 <PropertyList>
 
 <path>rpm.ac</path>
-
+<!-- The needles rotates 62 degrees from 50% to 100% or 1.24 degrees per percent -->
+<!-- The needles sit 11.5 degrees below 50% so about 40% -->
+<!-- Top of the scale is 96 degrees at 120% -->
     <animation>
         <type>rotate</type>
         <object-name>RPM.Eneedle</object-name>
         <property>engines/engine/n1</property>
         <interpolation>
             <entry><ind>0.0</ind><dep>0</dep></entry>
-            <entry><ind>110</ind><dep>85.0</dep></entry>
+            <entry><ind>50</ind><dep>11.5</dep></entry>
+            <entry><ind>100</ind><dep>73.5</dep></entry>
+            <entry><ind>120</ind><dep>96.0</dep></entry>
         </interpolation>
         <axis>
             <x>1</x>
@@ -29,9 +33,10 @@
         <object-name>RPM.Rneedle</object-name>
         <property>rotors/main/rpm</property>
         <interpolation>
-            <entry><ind>0.0</ind><dep>0</dep></entry>
-            <entry><ind>243.0</ind><dep>4.5</dep></entry>
-            <entry><ind>599.0</ind><dep>91.0</dep></entry>
+            <entry><ind>204.0</ind> <dep>0.0 </dep></entry><!--  40% -->
+            <entry><ind>255.0</ind><dep>11.5 </dep></entry><!--  50% -->
+            <entry><ind>510.0</ind><dep>73.5 </dep></entry><!-- 100% -->
+            <entry><ind>612.0</ind><dep>96.0 </dep></entry><!-- 120% -->
         </interpolation>
         <axis>
             <x>-1</x>

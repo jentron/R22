@@ -94,30 +94,39 @@ var fhour = fminute * 0.016666;
 setprop("/instrumentation/clock/flight-meter-hour",fhour);
 }
 
+
+var mysin = func(theta){
+    var sin = theta / 90.;
+    if (sin > 3) sin -=4;
+    if (sin > 1) sin=2-sin;
+    return(sin);
+}
+
+
 var main_rotor = func{
- var omega = getprop("fdm/jsbsim/propulsion/engine/rotor-rpm") * 60;
- var a0    =getprop("fdm/jsbsim/propulsion/engine/a0-rad")* 57.29578;
- var a1    =getprop("fdm/jsbsim/propulsion/engine/a1-rad")* 57.29578;
- var b1    =getprop("fdm/jsbsim/propulsion/engine/b1-rad")* 57.29578;
+    var omega = getprop("fdm/jsbsim/propulsion/engine/rotor-rpm") * 60;
+    var a0    =getprop("fdm/jsbsim/propulsion/engine/a0-rad")* 57.29578;
+    var a1    =getprop("fdm/jsbsim/propulsion/engine/a1-rad")* 57.29578;
+    var b1    =getprop("fdm/jsbsim/propulsion/engine/b1-rad")* 57.29578;
 
- if (omega < 61) omega=0; # JSBSim always turns at 1 RPM.
- var deltaT= getprop("/sim/time/delta-sec");
- var blade = getprop("/rotors/main/blade/position-deg");
- blade += omega*deltaT;
- if (blade > 360) blade -= 360;
- if (blade > 180){
-  var blade1 = blade - 180;
- }else{
-  var blade1 = blade + 180;
- }
- var flap = a0;
- var flap1= a0;
+    if (omega < 61) omega=0; # JSBSim always turns at 1 RPM.
+    var deltaT= getprop("/sim/time/delta-sec");
+    var blade = getprop("/rotors/main/blade/position-deg");
+    blade += omega*deltaT;
+    while (blade > 360) blade -= 360;
+    if (blade > 180){
+       var blade1 = blade - 180;
+    }else{
+       var blade1 = blade + 180;
+    }
 
+    var flap = a0 - math.sin(blade /57.296) * b1 - math.cos(blade /57.296) *a1;
+    var flap1= a0 - math.sin(blade1/57.296) * b1 - math.cos(blade1/57.296) *a1;
 
- setprop("/rotors/main/blade/position-deg", blade);
- setprop("/rotors/main/blade/flap-deg",     flap);
- setprop("/rotors/main/blade[1]/position-deg", blade1);
- setprop("/rotors/main/blade[1]/flap-deg",     flap1);
+    setprop("/rotors/main/blade/position-deg", blade);
+    setprop("/rotors/main/blade/flap-deg",     flap);
+    setprop("/rotors/main/blade[1]/position-deg", blade1);
+    setprop("/rotors/main/blade[1]/flap-deg",     flap1);
 
 }
 

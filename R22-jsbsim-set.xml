@@ -355,6 +355,24 @@ Syd Adams
         </keyboard>
     </input>
 
+    <instrumentation>
+      <alerts>
+        <mr-chip type="bool">0</mr-chip>
+        <mr-temp type="bool">0</mr-temp>
+        <tr-chip type="bool">0</tr-chip>
+        <oil     type="bool">0</oil>
+        <fuel    type="bool">0</fuel>
+        <clutch  type="bool">0</clutch>
+        <alt     type="bool">0</alt>
+        <brake   type="bool">0</brake>
+        <starter type="bool">0</starter>
+        <gov     type="bool">0</gov>
+        <co      type="bool">0</co>
+        <rpm     type="bool">0</rpm>
+      </alerts>
+    </instrumentation>
+
+
     <systems>
         <electrical>
             <sources>

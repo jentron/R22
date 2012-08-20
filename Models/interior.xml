@@ -212,6 +212,40 @@
 
     <animation>
         <type>select</type>
+        <object-name>mr-chip.annun</object-name>
+        <condition>
+                <and>
+                    <property>systems/electrical/sources/bus</property>
+                    <property>instrumentation/alerts/mr-chip</property>
+                </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>mr-temp.annun</object-name>
+        <condition>
+                <and>
+                    <property>systems/electrical/sources/bus</property>
+                    <property>instrumentation/alerts/mr-temp</property>
+                </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>tr-chip.annun</object-name>
+        <condition>
+                <and>
+                    <property>systems/electrical/sources/bus</property>
+                    <property>instrumentation/alerts/tr-chip</property>
+                </and>
+        </condition>
+    </animation>
+
+
+    <animation>
+        <type>select</type>
         <object-name>oil.annun</object-name>
         <condition>
                 <and>

@@ -861,7 +861,7 @@
            <property>metrics/Sw-sqft</property>
            <property>metrics/bw-ft</property>
            <property>aero/function/sin-beta</property>
-           <value>0.049</value>
+           <value>0.025</value>
        </product>
     </function>
 

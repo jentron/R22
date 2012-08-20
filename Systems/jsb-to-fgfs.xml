@@ -51,8 +51,6 @@
       </pure_gain>
   </channel>
 
-<property value="0.0"> /rotors/main/blade[0]/position-deg</property>
-<property value="180.0"> /rotors/main/blade[1]/position-deg</property>
 <property value="1.0"> /controls/engines/engine/clutch </property>
 
   <channel name="rotor">
@@ -62,23 +60,6 @@
       <gain> 1.0 </gain>
       <output> fcs/clutch-tension-cmd </output>
     </pure_gain>
-
-    <fcs_function name="systems/rotor/rate-deg_sec">
-      <function>
-        <product>
-          <property> propulsion/engine/rotor-rpm </property>
-          <value> 60 </value>
-        </product>
-      </function>
-      <output> /rotors/main/blade[0]/position-deg </output>
-    </fcs_function>
-
-
-    <summer name="systems/rotor/blade1-position-deg">
-      <input> /rotors/main/blade[0]/position-deg </input>
-      <bias>  180 </bias>
-      <output> /rotors/main/blade[1]/position-deg </output>
-    </summer>
 
     <fcs_function name="/rotors/main/rpm">
       <function>

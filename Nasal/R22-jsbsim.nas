@@ -11,6 +11,8 @@ FHmeter.stop();
 setlistener("/sim/signals/fdm-initialized", func {
     setprop("/instrumentation/clock/flight-meter-hour",0);
     setprop("controls/engines/engine/propeller-pitch",0);
+    setprop("/rotors/main/blade/position-deg", 0);
+    setprop("/rotors/main/blade[1]/position-deg", 180);
     RPM_arm.setBoolValue(0);
     print("Systems ... Check");
     settimer(update_systems,2);
@@ -92,6 +94,33 @@ var fhour = fminute * 0.016666;
 setprop("/instrumentation/clock/flight-meter-hour",fhour);
 }
 
+var main_rotor = func{
+ var omega = getprop("fdm/jsbsim/propulsion/engine/rotor-rpm") * 60;
+ var a0    =getprop("fdm/jsbsim/propulsion/engine/a0-rad")* 57.29578;
+ var a1    =getprop("fdm/jsbsim/propulsion/engine/a1-rad")* 57.29578;
+ var b1    =getprop("fdm/jsbsim/propulsion/engine/b1-rad")* 57.29578;
+
+ if (omega < 61) omega=0; # JSBSim always turns at 1 RPM.
+ var deltaT= getprop("/sim/time/delta-sec");
+ var blade = getprop("/rotors/main/blade/position-deg");
+ blade += omega*deltaT;
+ if (blade > 360) blade -= 360;
+ if (blade > 180){
+  var blade1 = blade - 180;
+ }else{
+  var blade1 = blade + 180;
+ }
+ var flap = a0;
+ var flap1= a0;
+
+
+ setprop("/rotors/main/blade/position-deg", blade);
+ setprop("/rotors/main/blade/flap-deg",     flap);
+ setprop("/rotors/main/blade[1]/position-deg", blade1);
+ setprop("/rotors/main/blade[1]/flap-deg",     flap1);
+
+}
+
 var kill_engine=func{
         setprop("/engines/engine/clutch-engaged",0);
         engine_on.setValue(0);
@@ -109,8 +138,9 @@ var update_systems = func {
 #    if(running==0)engine_on.setValue(running);
 #     var throttle = getprop("/controls/rotor/engine-throttle");
     flight_meter();
+    main_rotor();
 if(!RPM_arm.getBoolValue()){
-if(getprop("/rotors/main/rpm") > 525)RPM_arm.setBoolValue(1);
+if(getprop("/rotors/main/rpm") > 450)RPM_arm.setBoolValue(1);
 }
 
 

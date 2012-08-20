@@ -657,7 +657,7 @@
   </function>
 
   <axis name="LIFT">
-    <function name="aero/coefficient/CL0">
+    <function name="aero/force/CL0">
       <description>Lift_due_to_alpha</description>
       <product>
        <value> 0. </value>
@@ -669,7 +669,7 @@
 
   <axis name="DRAG">
 
-    <function name="aero/coefficient/CD0">
+    <function name="aero/force/CD0">
        <description>Drag_at_zero_lift</description>
        <product>
           <property>aero/qbar-psf</property>
@@ -688,7 +688,7 @@
           </table>
        </product>
     </function>
-   <function name="aero/coefficient/CDmach">
+   <function name="aero/force/CDmach">
        <description>Drag_due_to_mach</description>
         <product>
           <property>aero/qbar-psf</property>
@@ -705,7 +705,7 @@
         </product>
     </function>
 
-    <function name="aero/coefficient/CDbeta">
+    <function name="aero/force/CDbeta">
        <description>Drag_due_to_sideslip</description>
        <product>
           <property>aero/qbar-psf</property>
@@ -728,7 +728,7 @@
 
   <axis name="SIDE">
 
-    <function name="aero/coefficient/CYb">
+    <function name="aero/force/CYb">
        <description>Side_force_due_to_beta</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -742,7 +742,7 @@
 
   <axis name="ROLL">
 
-    <function name="aero/coefficient/Clb">
+    <function name="aero/moment/Clb">
        <description>Roll_moment_due_to_beta</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -753,7 +753,7 @@
        </product>
     </function>
 
-    <function name="aero/coefficient/Clp">
+    <function name="aero/moment/Clp">
        <description>Roll moment due to roll rate extended to work at zero velocity</description>
        <product>
         <value>-0.4</value> <!-- Clp -->
@@ -782,7 +782,7 @@
        </product>
       </function>
 
-    <function name="aero/coefficient/Clr">
+    <function name="aero/moment/Clr">
        <description>Roll_moment_due_to_yaw_rate</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -798,7 +798,7 @@
 
   <axis name="PITCH">
 
-    <function name="aero/coefficient/Cmalpha">
+    <function name="aero/moment/Cmalpha">
        <description>Pitch_moment_due_to_alpha</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -809,7 +809,7 @@
        </product>
     </function>
 
-    <function name="aero/coefficient/Cmq">
+    <function name="aero/moment/Cmq">
        <description>Pitch_moment_due_to_pitch_rate extended to work at zero velocity</description>
        <product>
         <value>-1.446</value> <!-- CMAD -->
@@ -838,7 +838,7 @@
        </product>
       </function>
 
-    <function name="aero/coefficient/Cmadot">
+    <function name="aero/moment/Cmadot">
        <description>Pitch_moment_due_to_alpha_rate</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -854,7 +854,7 @@
 
   <axis name="YAW">
 
-    <function name="aero/coefficient/Cnb">
+    <function name="aero/moment/Cnb">
        <description>Yaw_moment_due_to_beta</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -865,7 +865,7 @@
        </product>
     </function>
 
-    <function name="aero/coefficient/Cnr">
+    <function name="aero/moment/Cnr">
        <description>Yaw_moment_due_to_yaw_rate extended to work at zero velocity</description>
        <product>
         <value>-0.1411</value> <!-- CNR -->
@@ -894,7 +894,7 @@
        </product>
       </function>
 
-    <function name="aero/coefficient/Cnp">
+    <function name="aero/moment/Cnp">
        <description>Yaw_moment_due_to_roll_rate</description>
        <product>
            <property>aero/qbar-psf</property>

@@ -48,7 +48,7 @@ Syd Adams
         </instrumentation>
 
         <sound>
-            <path>Aircraft/R22/R22-sound.xml</path>
+            <path>Aircraft/R22/R22-jsbsim-sound.xml</path>
             <volume1 type="double">0.5</volume1>
             <click type="bool">0</click>
         </sound>

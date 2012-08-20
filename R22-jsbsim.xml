@@ -36,10 +36,10 @@
    <wingspan  unit="FT" >  12.000 </wingspan>
    <wing_incidence>        -0.01 </wing_incidence>
    <chord     unit="FT" >   2.500 </chord>
-   <htailarea unit="FT2">   3.971 </htailarea>
-   <htailarm  unit="FT" >   5.100 </htailarm>
-   <vtailarea unit="FT2">   1.619 </vtailarea>
-   <vtailarm  unit="FT" >   5.460 </vtailarm>
+   <htailarea unit="FT2">   1.19 </htailarea><!-- From syd's 3d model -->
+   <htailarm  unit="FT" >  14.60 </htailarm> <!-- From syd's 3d model -->
+   <vtailarea unit="FT2">   2.42 </vtailarea><!-- From syd's 3d model -->
+   <vtailarm  unit="FT" >  14.60 </vtailarm> <!-- From syd's 3d model -->
    <location name="AERORP" unit="IN">
      <x>100.00 </x>
      <y>  0.00 </y>
@@ -855,13 +855,13 @@
   <axis name="YAW">
 
     <function name="aero/moment/Cnb">
-       <description>Yaw_moment_due_to_beta</description>
+       <description>Yaw_moment_due_to_beta on vertical fin</description>
        <product>
            <property>aero/qbar-psf</property>
-           <property>metrics/Sw-sqft</property>
-           <property>metrics/bw-ft</property>
+           <property>metrics/Sv-sqft</property>
+           <property>metrics/lv-ft</property>
            <property>aero/function/sin-beta</property>
-           <value>0.025</value>
+           <value>0.14</value>
        </product>
     </function>
 

@@ -327,6 +327,7 @@
   <system file="jsb-to-fgfs"/>
 
   <system name="transmission">
+    <property value="1.0"> propulsion/engine[1]/clutch-ctrl-norm </property>
 
     <channel name="clutch">
       <fcs_function name="systems/transmission/clutch-tension-value">
@@ -357,7 +358,35 @@
         <output> propulsion/engine/clutch-ctrl-norm </output>
       </pure_gain>
     </channel>
-    <property value="1.0"> propulsion/engine[1]/clutch-ctrl-norm </property>
+
+    <channel name="tail rotor">
+
+      <fcs_function name="systems/transmission/tail-rotor-power-hp">
+        <function>
+          <product>
+             <property> propulsion/engine[1]/torque-lbsft  </property>
+             <property> propulsion/engine[1]/rotor-rpm </property>
+             <value> 0.00019039953 </value> <!-- 1/5252 the conversion factor from lbf*ft*rpm to hp-->
+           </product>
+        </function>
+      </fcs_function>
+
+    </channel>
+
+    <channel name="main rotor">
+
+      <fcs_function name="systems/transmission/main-rotor-power-hp">
+        <function>
+          <product>
+             <property> propulsion/engine[0]/torque-lbsft  </property>
+             <property> propulsion/engine[0]/rotor-rpm </property>
+             <value> 0.00019039953 </value> <!-- 1/5252 the conversion factor from lbf*ft*rpm to hp-->
+           </product>
+        </function>
+      </fcs_function>
+
+    </channel>
+
 
   </system>
 
@@ -539,6 +568,29 @@
           </table>
         </function>
       </fcs_function>
+    </channel>
+
+    <property value="0.0"> fcs/rotor-brake-cmd-norm </property>
+    <property value="0.0"> fcs/rotor-crash </property>
+    <channel name="rotor brake">
+<!-- I'm reserving 1/2 the rotor brake power for actual braking and 100% of the power 
+     for an eventual 'crashed' indication -->
+      <pure_gain name="fcs/rotor-brake-ctrl">
+        <input>  fcs/rotor-brake-cmd-norm </input>
+        <gain>   0.5 </gain>
+      </pure_gain>
+  
+      <summer name="fcs/rotor-brake-pos-norm">
+        <input> fcs/rotor-brake-ctrl </input>
+        <input> fcs/rotor-crash </input>
+        <clipto>
+          <min>  0.0 </min>
+          <max>  1.0 </max>
+        </clipto>
+        <output> propulsion/engine[0]/brake-ctrl-norm </output>
+      </summer>
+  
+  
     </channel>
 
   </flight_control>

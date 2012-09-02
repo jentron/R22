@@ -18,7 +18,7 @@ NTSB/SIR-96/03
   <twist unit="DEG">                     -8.0 </twist>
 
 <!-- Guesses -->
-  <gearloss>0.4</gearloss>
+  <maxbrakepower>16</maxbrakepower> <!-- controls only use half of this -->
 
 <!-- Moments -->
  <!-- Defaults
@@ -42,6 +42,7 @@ NTSB/SIR-96/03
   <hingeoffset unit="FT">                0.50 </hingeoffset>
   <groundeffectexp>                      0.081 </groundeffectexp>
   <groundeffectshift unit="FT">          0.0 </groundeffectshift>
+  <gearloss>                             0.0</gearloss>
 
 
 

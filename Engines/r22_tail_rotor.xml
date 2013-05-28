@@ -18,7 +18,7 @@ http://www.proprofs.com/flashcards/tableview.php?title=robinson-r22-poh-1-genera
 
 <!-- From here down isn't correct or verified -->
     <flappingmoment unit="SLUG*FT2">     1.45 </flappingmoment> <!-- guessed from ah1g lock number 2.23 -->
-    <liftcurveslope>                      6.0 </liftcurveslope>
+    <liftcurveslope>                      7.0 </liftcurveslope>
     <massmoment>                         0.46 </massmoment> <!-- SLUG*FT -->
     <tiplossfactor>                       1.0 </tiplossfactor>
     <inflowlag>                          0.09 </inflowlag> 

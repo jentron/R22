@@ -7,8 +7,8 @@
   <ubody>       0.0 </ubody>
   <vbody>       0.0 </vbody>
   <wbody>       0.0 </wbody>
-  <latitude>   47.0 </latitude>
-  <longitude> 122.0 </longitude>
+  <latitude unit="DEG">   47.0 </latitude>
+  <longitude unit="DEG"> 122.0 </longitude>
   <phi>         0.0 </phi>
   <theta>       0.0 </theta>
   <psi unit="DEG"> 180.0 </psi>
